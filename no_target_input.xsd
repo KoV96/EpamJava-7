@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs ="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="Students">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Student" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="firstName" type="xs:string"/>
+                            <xs:element name="lastName" type="xs:string"/>
+                            <xs:element name="age">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:minInclusive value="0"/>
+                                        <xs:maxInclusive value="120"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="country">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="USA"/>
+                                        <xs:enumeration value="Ukraine"/>
+                                        <xs:enumeration value="Poland"/>
+                                        <xs:enumeration value="Columbia"/>
+                                        <xs:enumeration value="France"/>
+                                        <xs:enumeration value="Germany"/>
+                                        <xs:enumeration value="Canada"/>
+                                        <xs:enumeration value="Italy"/>
+                                        <xs:enumeration value="Spain"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="phoneNumber" type="xs:long"/>
+                            <xs:element name="params">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="height">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:double">
+                                                    <xs:minInclusive value="100.00"/>
+                                                    <xs:maxInclusive value="230.00"/>
+                                                </xs:restriction>
+
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="weight">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:double">
+                                                    <xs:minInclusive value="40.00"/>
+                                                    <xs:maxInclusive value="250.00"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="colour">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="black"/>
+                                                    <xs:enumeration value="white"/>
+                                                    <xs:enumeration value="yellow"/>
+                                                </xs:restriction>
+
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
